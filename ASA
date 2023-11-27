@@ -1,0 +1,20 @@
+package prueba;
+
+import java.util.List;
+import java.util.Stack;
+
+public class ASA implements Parser{
+    private int i = 0;
+    private boolean incorrecto = false;
+    private Token preanalisis;
+    private final List<Token> tokens;
+    public ASA(List<Token> tokens){
+        this.tokens=tokens;
+        preanalisis=this.tokens.get(i);
+    }
+
+    public void analisis(){
+        Stack<String> stack=new Stack<>();
+        stack.push("1");//se llena con el primer q
+        String x=stack.peek();//aquí apuntamos el tope de la pila
+        Boolean re=true;
